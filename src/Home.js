@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/events')
+      .get('https://family-game-night-calc.herokuapp.com/events')
       .then((res) => setEvents(res.data.events))
       .catch((err) => console.log(err));
   }, []);
@@ -38,16 +38,6 @@ export default function Home() {
     var suffix = ' day'.concat(days === 1 ? '' : 's');
     return days + suffix;
   }
-
-  /**
- * <ul>
-      {events.map((event) => (
-        <li key={event.name}>
-          {event.name + ', ' + moment(event.date).fromNow()}
-        </li>
-      ))}
-    </ul>
- */
 
   return (
     <Grid
