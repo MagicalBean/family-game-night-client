@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Material UI
 import Table from '@material-ui/core/Table';
@@ -12,7 +13,12 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Grid, Typography } from '@material-ui/core';
 
+const useStyles = makeStyles((theme) => ({
+  ...theme.spread,
+}));
+
 export default function Home() {
+  const classes = useStyles();
   const [events, setEvents] = useState([]);
   const [exactDisplay, setExactDisplay] = useState(false);
 
