@@ -5,12 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import { Button, CircularProgress, Grid, TextField } from '@material-ui/core';
 import './App.scss';
 
-import { format } from 'date-fns';
-
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
-  validate,
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import { BASE_URL } from './Utils';

@@ -10,7 +10,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { CircularProgress, IconButton, Typography } from '@material-ui/core';
 
 // Icons
@@ -46,7 +45,6 @@ export default function CalendarEvents({ updateTable, setUpdateTable }) {
   const classes = useStyles();
   const [events, setEvents] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-  const [uniqueGames, setUniqueGames] = React.useState([]);
 
   useEffect(() => {
     if (updateTable) {
@@ -59,10 +57,10 @@ export default function CalendarEvents({ updateTable, setUpdateTable }) {
             setUpdateTable(false);
             setLoading(false);
           }, 500);
-          console.log(uniqueGames);
         })
         .catch((err) => console.log(err));
     }
+    //eslint-disable-next-line
   }, [updateTable]);
 
   const deleteEvent = (id) => {
